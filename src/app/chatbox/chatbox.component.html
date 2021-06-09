@@ -1,0 +1,47 @@
+<div id="container">
+
+    <div id="header">
+        <div class="avtarSection">
+            <div class="picture"> <img src="../../assets/images/noprofilpic.png" /></div>
+            <div class="nameSection">
+                Angular
+            </div>
+        </div>
+        <div class="actionSection">
+            <mat-icon>search</mat-icon>
+            <mat-icon>favorite_border</mat-icon>
+            <mat-icon>notifications_none</mat-icon>
+        </div>
+
+    </div>
+
+
+    <div id="body">
+        <!-- <div class="message" [ngClass]="{me: message.me }" *ngFor="let message of coversation.messages"> -->
+        <div class="message" [ngClass]="message.me ? 'me' : 'notme'" *ngFor="let message of coversation.messages">
+            <div class="messageBody">
+                {{message.body}} }
+            </div>
+        </div>
+    </div>
+
+
+    <div id="footer">
+        <div class="textArea">
+            <div class="mikeIcon">
+                <mat-icon>mic_none</mat-icon>
+            </div>
+            <textarea placeholder="Write Something" [(ngModel)]="message" (keyup.enter)="submitMsg()" [(ngModel)]="textMsg"></textarea>
+
+            <div class="otherIcon">
+                <mat-icon> attach_file</mat-icon>
+                <mat-icon>camera_alt</mat-icon>
+                <mat-icon (click)="emojiPickerVisible=!emojiPickerVisible">tag_faces</mat-icon>
+                <emoji-mart *ngIf="emojiPickerVisible" (emojiClick)="addEmoji($event)" style="position: absolute; bottom: 50px; right:120px; " title="Pick your emoji…" emoji="point_up"></emoji-mart>
+
+                <div class="_2TiQe" (click)="submitMsg()"><span class="_38M1B" aria-label="1 unread message"><mat-icon>send</mat-icon></span></div>
+            </div>
+        </div>
+    </div>
+
+</div>

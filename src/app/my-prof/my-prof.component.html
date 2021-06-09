@@ -1,0 +1,54 @@
+<div class="sidebar-contact ">
+
+    <div id=row1>
+
+
+        <div class="sidebarHeader">
+
+            <div class="avtarContainer">
+                <!-- <img src="../../assets/images/pic.svg" /> -->
+                <img src="../../assets/images/noprofilpic.png" />
+            </div>
+            <div class="nameContainer">
+
+                <div class="title">Asmita</div>
+                <div class="subTitle">Software Developer</div>
+
+
+            </div>
+            <div class="actionContainer">
+                <mat-icon style="size: 10px;">edit</mat-icon>
+            </div>
+        </div>
+
+
+        <div class="searchBox">
+            <mat-icon>search</mat-icon>
+            <input [(ngModel)]='searchText' type="search" placeholder="search friends" />
+        </div>
+
+    </div>
+
+
+    <div class="sidebarContent">
+
+        <div class="coversation" *ngFor="let conversation of !searchText? conversations :filteredConversation" (click)="conversationClicked.emit(conversation)">
+            <div class="picture">
+                <img src="../../assets/images/noprofilpic.png" />
+            </div>
+            <div class="content">
+                <div class="conversationHeader">
+                    <div class="name">{{conversation.name}}</div>
+                    <div class="time">{{conversation.time}}</div>
+
+                </div>
+                <div class="message">
+
+                    {{conversation.latestMessage}}
+                    <mat-icon *ngIf="conversation.latestMessageRead">check</mat-icon>
+                    <div *ngIf="!conversation.latestMessageRead" class="_2TiQe"><span class="_38M1B" aria-label="1 unread message">1</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

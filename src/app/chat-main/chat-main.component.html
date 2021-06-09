@@ -1,0 +1,17 @@
+<div class="background-body"></div>
+
+<div class="chat-container">
+
+    <app-my-prof (conversationClicked)="onConversationSelected($event)"></app-my-prof>
+
+    <div class="chat">
+        <div class="chatPlaceHolder" *ngIf="!coversation">Please select a chat to start messaging</div>
+        <app-chatbox [coversation]="coversation" *ngIf="coversation"></app-chatbox>
+    </div>
+
+    <div class="chat-contacts">
+        <app-another-prof></app-another-prof>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,43 @@
+.background-body {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(101 143 255);
+}
+
+.chat-container {
+    position: fixed;
+    top: 0%;
+    bottom: 0%;
+    margin: auto;
+    height: 88%;
+    width: 90%;
+    border-radius: 20px;
+    background-color: white;
+    left: 0%;
+    right: 0%;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.chat-container>app-my-prof {
+    flex-basis: 25%;
+    display: block;
+}
+
+.chat {
+    flex-basis: 50%;
+}
+
+.chatPlaceHolder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    height: 100%;
+}
+
+.chat-contacts {
+    background-color: #fafafa;
+    flex-basis: 25%;
+}
