@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class ChatMainComponent implements OnInit {
 
   coversation;
+  // main = "Asitaa";
+  main;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -15,6 +18,10 @@ export class ChatMainComponent implements OnInit {
 
   onConversationSelected(conversations) {
 
+    console.log("main", conversations);
     this.coversation = conversations;
+    this.main = conversations.name;
+    // console.log(this.currunt1);
   }
+
 }

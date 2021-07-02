@@ -4,7 +4,7 @@
         <div class="avtarSection">
             <div class="picture"> <img src="../../assets/images/noprofilpic.png" /></div>
             <div class="nameSection">
-                Angular
+                {{coversation.name}}
             </div>
         </div>
         <div class="actionSection">
@@ -20,7 +20,7 @@
         <!-- <div class="message" [ngClass]="{me: message.me }" *ngFor="let message of coversation.messages"> -->
         <div class="message" [ngClass]="message.me ? 'me' : 'notme'" *ngFor="let message of coversation.messages">
             <div class="messageBody">
-                {{message.body}} }
+                {{message.body}}
             </div>
         </div>
     </div>

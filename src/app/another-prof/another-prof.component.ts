@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-another-prof',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnotherProfComponent implements OnInit {
 
-  constructor() { }
+
+  //@Input() prof = 'hiivgv'; // decorate the property with @Input()
+  @Input() prof; // decorate the property with @Input()
+  constructor() {
+
+
+  }
 
   ngOnInit(): void {
   }
+
 
 }

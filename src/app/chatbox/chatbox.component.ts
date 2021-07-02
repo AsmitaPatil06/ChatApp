@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { UserService } from '../user-service.service';
 // import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -16,39 +17,40 @@ export class ChatboxComponent implements OnInit {
   // messages = [];
   public textMsg: string;
 
-  constructor() { }
+  constructor(private cs: UserService) { }
 
   ngOnInit(): void {
+
   }
 
   submitMsg() {
 
-    console.log(this.textMsg);
+    // console.log(this.textMsg);
     let value = this.textMsg.trim();
-    this.message = '';
+    // this.message = '';
 
     if (value.length < 1) return false
 
     this.coversation.latestMessage = value;
+    console.log(this.textMsg)
+    console.log("id==>", this.coversation._id);
     this.coversation.messages.unshift(
       { id: 1, body: value, time: "9:21", me: true }
     )
   }
+
   // submitMsg() {
 
-  //   console.log(this.textMsg);
-  //   let value = this.textMsg.trim();
-  //   this.message = '';
+  //   if (this.coversation._id === null) { }
+  //   else {
+  //     let id = this.coversation._id;
+  //     let value = this.textMsg.trim();
 
-  //   if (value.length < 1) return false
-
-  //   this.coversation.latestMessage = value;
-  //   this.httpClient.post('http://localhost:3000/chatmsg', value).subscribe(res => {
-  //   });
-
+  //     this.cs.updateChat(value, id).subscribe((res) => {
+  //       console.log("Post Value", res);
+  //     })
+  //   }
   // }
-
-
   addEmoji(event) {
 
     this.message += event.emoji.native;

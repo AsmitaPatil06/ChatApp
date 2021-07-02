@@ -17,7 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { AnotherProfComponent } from './another-prof/another-prof.component';
 
-
+import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { PickerModule } from '@ctrl/ngx-emoji-mart';
@@ -28,6 +28,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import { environment } from 'src/environments/environment';
+import { UserService } from './user-service.service';
+
 
 
 
@@ -43,7 +46,9 @@ import { FormsModule } from '@angular/forms';
 
     ChatboxComponent,
 
-    AnotherProfComponent
+    AnotherProfComponent,
+
+
   ],
   imports: [
     BrowserModule,
@@ -59,12 +64,13 @@ import { FormsModule } from '@angular/forms';
     MatFormFieldModule,
 
     MatInputModule,
-
+    HttpClientModule,
     FormsModule,
     PickerModule
 
+
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
